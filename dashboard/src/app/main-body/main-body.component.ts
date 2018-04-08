@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+
 
 @Component({
   selector: 'app-main-body',
@@ -14,10 +15,10 @@ export class MainBodyComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.http.get('http://localhost:3000/lua/hosts_stats.lua').subscribe(
+    const httpOptions = { headers: new HttpHeaders({'Cookie': 'user=admin; session=724e3820ca5f317906df81bad926f771'})};
+    this.http.get('http://localhost:3000/lua/network_load.lua', httpOptions).subscribe(
       response => this.data = response.toString(),
       error => console.log(error)
     );
   }
-
 }
