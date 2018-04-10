@@ -15,10 +15,10 @@ export class MainBodyComponent implements OnInit {
   }
 
   ngOnInit() {
-    const httpOptions = { headers: new HttpHeaders({'Cookie': 'user=admin; session=724e3820ca5f317906df81bad926f771'})};
-    this.http.get('http://localhost:3000/lua/network_load.lua', httpOptions).subscribe(
-      response => this.data = response.toString(),
-      error => console.log(error)
-    );
+    // const httpOptions = { headers: new HttpHeaders({'Cookie': 'user=admin; session=724e3820ca5f317906df81bad926f771'})};
+    // this.http.get('http://localhost:3000/lua/network_load.lua', httpOptions).subscribe(
+    //   response => this.data = response.toString(),
+    //   error => console.log(error)
+    // );
   }
 }
